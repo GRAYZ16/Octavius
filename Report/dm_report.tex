@@ -1,0 +1,112 @@
+\documentclass[11pt]{article}
+
+\usepackage{geometry}
+
+
+\usepackage[T1]{fontenc}
+\usepackage{longtable,amsmath,tabularx}
+\usepackage{bigfoot} % to allow verbatim in footnote
+\usepackage[numbered,framed]{matlab-prettifier}
+\usepackage{array}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage{amsmath}
+
+\usepackage{subfiles}
+
+\usepackage[hidelinks]{hyperref}
+\hypersetup{
+	colorlinks=false, %set true if you want colored links
+	linktoc=all,
+}
+
+	\newgeometry{
+	a4paper,
+	left=25mm,
+	right=25mm,
+	top=25mm,
+	bottom=25mm,
+}
+
+\usepackage[toc,page]{appendix}
+
+\usepackage{lscape}
+
+\usepackage{float}
+
+\usepackage{times}
+
+\fontfamily{ptm}\selectfont
+
+\lstset{
+	style              = Matlab-editor,
+	basicstyle         = \mlttfamily,
+	escapechar         = ",
+	mlshowsectionrules = true,
+}
+
+
+\usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{CP3403}
+\lhead{Data Mining Project}
+\rfoot{Page \thepage}
+
+\begin{document}
+	
+	\begin{titlepage}
+		\begin{center}
+			\vspace*{1cm}
+			
+			\Huge
+			\textbf{Data Mining Project}
+			
+			\vspace{0.5cm}
+			\LARGE
+			CP3403 - Data Mining Project
+			
+			\vspace{1.5cm}
+			
+			\textbf{Joshua Gray - 13177877}\\
+			\textbf{Harmon Singh - }		
+			
+			\vfill			
+					
+			\vspace{0.8cm}
+			
+			%\includegraphics[width=0.4\textwidth]{university}
+			
+			\Large
+			College of Business, Law and Governance\\
+			James Cook University\\
+			Australia\\
+			25/05/2019
+			
+		\end{center}
+	\end{titlepage}
+	
+	\pagenumbering{roman}
+	\tableofcontents
+	\listoffigures
+	\listoftables
+	\newpage
+	\pagenumbering{arabic}
+	
+	\section{Introduction}
+	
+	\section{Conclusion}
+	
+	\newpage
+	\nocite{*}	
+	\addcontentsline{toc}{section}{References}
+	\bibliographystyle{IEEEtran}
+	%\bibliography{References}{}
+	
+	\newpage
+	\begin{appendices}
+		\section{Examples}
+		
+	\end{appendices}	
+\end{document}
