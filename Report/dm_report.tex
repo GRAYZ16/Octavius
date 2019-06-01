@@ -122,7 +122,7 @@
 	\end{figure}
 
 	\subsection{Multi-layer Perceptron}
-	With this simple neuron functionality, the implementation of the Multi-layer Perceptron (MLP) system can be realises. An MLP system consists of fully connected "layers" of neurons. At their most simple level, they can be realised with a minimum of three layers. The first layer, the input layer is the place in which raw information enters the network. This layer is un-weighted and each neuron fully connectes to the next layer, the "hidden" layer. The hidden layer can be a single layer and up to as many layers as the developer chooses. These layers are fully connected i.e. each output connects to every neuron in the next layer. The final layer is called the output layer. This layer is the direct point in which interfacing with the neural network is performed. Depending on the task required, the function of the output layer may vary. The implementation of MLP for this project is explored in Section \ref{sec:mlp_class}.
+	With this simple neuron functionality, the implementation of the Multi-layer Perceptron (MLP) system can be realises. An MLP system consists of fully connected "layers" of neurons. At their most simple level, they can be realised with a minimum of three layers. The first layer, the input layer is the place in which raw information enters the network. This layer is un-weighted and each neuron fully connects to the next layer, the "hidden" layer. The hidden layer can be a single layer and up to as many layers as the developer chooses. These layers are fully connected i.e. each output connects to every neuron in the next layer. The final layer is called the output layer. This layer is the direct point in which interfacing with the neural network is performed. Depending on the task required, the function of the output layer may vary. The implementation of MLP for this project is explored in Section \ref{sec:mlp_class}.
 	
 	\begin{figure}[H]
 		\centering
@@ -131,8 +131,7 @@
 		\label{fig:mlp}
 	\end{figure}
 	
-	\subsection{MLP for Classification}\label{sec:mlp_class}
-	
+	\subsection{MLP's and Classification}\label{sec:mlp_class}
 	
 	
 	\section{EMG Data for Gestures Data Set}
@@ -235,7 +234,7 @@
 	\end{table}
 
 	\noindent
-	The original data file structure consists of multiple folders relating to each subject with multiple data files for each test performed. The data format module was designed such that the entire filesystem will be traversed and each file available on the system is read and converted into the desired interim format. The full exploration of the data format module can be seen in Appendix  \ref{adx:data_format}. Beyond this, the data format tool has the following features
+	The original data file structure consists of multiple folders relating to each subject with multiple data files for each test performed. The data format module was designed such that the entire file-system will be traversed and each file available on the system is read and converted into the desired interim format. The full exploration of the data format module can be seen in Appendix  \ref{adx:data_format}. Beyond this, the data format tool has the following features
 	
 	\begin{itemize}
 		\item Unmarked data is completely removed
@@ -265,6 +264,9 @@
 		\end{tabular}
 	\end{table}
 
+	\noindent
+	The last aspect of the data storage system is accessing the data within the MLP software. This is done using an ODBC driver written in python (pyodbc). Being a generic driver for database connectivity, this interface should be accessible for different RDBMS software (Oracle or MySQL) as well as different programming languages as the ODBC driver is implemented in all major programming languages.
+
 	\subsection{Data Processing}
 	Much unlike many problems in Data Mining, the preprocessing for this system lies primarily in the ability to use insights of the raw data in order to process them for a neural network. As it is inherently a signal processing problem\cite{emg_analysis}, the following is assumed of the Gestures data based on the range of values:
 	
@@ -278,10 +280,15 @@
 	Based on this, the first step of data processing is to "rectify" the incoming values. As the EMG data is an electrical signal based on activity produced by skeletal muscles, the value of such signal are sinusoidal in nature. Given this, the sign of record values is irrelevant to the classification task and in order to minimise confusion of the MLP system, were removed.\\
 	
 	\noindent
-	The next step is to prepare the values to be used with the chosen MLP system. In a neural network system, there are multiple variables that come into play when preprocessing data. With the increase in computation time, it is important that only necessary functions are applied for real-time systems, as well as
-	
+	The next step is to prepare the values to be used with the chosen MLP system. In a neural network system, there are multiple variables that come into play when preprocessing data. With the increase in computation time, it is important that only necessary functions are applied for real-time systems, as well as designing input functions to fully utilise the activation functions of MLP neurons and minimise errors due to floating point quantisation error. For this aspect, MinMax Scaling was used to ensure that values were within the gradient points of the activation function (ReLU) as well as achieving a zero mean and unit variance.
 	
 	\section{Artificial Neural Networks}
+	
+	
+	\section{Performance}
+	
+	One caveat realised towards the end of the data preprocessing was the use of MinMax scaling at the batch level potentially skewing results obtained. A more appropriate solution is the use of MinMax at the subject level such that the maximum of a record is relative to the maximum value recorded by that subject. With this, the generalisation process may have been considerably more accurate. 
+		
 	
 	\section{Conclusion}
 	

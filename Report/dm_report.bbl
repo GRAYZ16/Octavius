@@ -38,6 +38,10 @@ Thalmic. (2019, Jun.) How do i access the raw emg data from the myo armband?
   \url{https://support.getmyo.com/hc/en-us/articles/202536726}
 \BIBentrySTDinterwordspacing
 
+\bibitem{emg_analysis}
+W.~Rose, ``Electromyogram analysis,'' \emph{Mathematics and Signal Processing
+  for Biomechanics}, 2014.
+
 \bibitem{Dua:2019}
 \BIBentryALTinterwordspacing
 D.~Dua and C.~Graff, ``{UCI} machine learning repository,'' 2017. [Online].
@@ -64,9 +68,5 @@ J.~Brownlee. (2018, Sep.) Machine learning algorithms in python. Machine
 
 \bibitem{chollet2015keras}
 F.~Chollet \emph{et~al.}, ``Keras,'' \url{https://keras.io}, 2015.
-
-\bibitem{emg_analysis}
-W.~Rose, ``Electromyogram analysis,'' \emph{Mathematics and Signal Processing
-  for Biomechanics}, 2014.
 
 \end{thebibliography}
