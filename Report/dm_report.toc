@@ -2,8 +2,9 @@
 \contentsline {section}{\numberline {2}Artificial Neural Networks}{1}{section.2}
 \contentsline {section}{\numberline {3}EMG Data for Gestures Data Set}{1}{section.3}
 \contentsline {section}{\numberline {4}Preprocessing}{3}{section.4}
-\contentsline {section}{\numberline {5}Artificial Neural Networks}{3}{section.5}
-\contentsline {section}{\numberline {6}Conclusion}{3}{section.6}
-\contentsline {section}{References}{4}{section.6}
-\contentsline {section}{Appendices}{5}{section*.8}
-\contentsline {section}{\numberline {A}Examples}{5}{Appendix.1.A}
+\contentsline {subsection}{\numberline {4.1}Data Format Tool}{4}{subsection.4.1}
+\contentsline {section}{\numberline {5}Artificial Neural Networks}{6}{section.5}
+\contentsline {section}{\numberline {6}Conclusion}{6}{section.6}
+\contentsline {section}{References}{7}{section.6}
+\contentsline {section}{Appendices}{8}{section*.10}
+\contentsline {section}{\numberline {A}Examples}{8}{Appendix.1.A}

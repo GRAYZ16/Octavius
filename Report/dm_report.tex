@@ -39,6 +39,8 @@
 \usepackage{caption} 
 \captionsetup[table]{skip=10pt}
 
+\usepackage{tikz}
+
 \fontfamily{ptm}\selectfont
 
 \lstset{
@@ -172,11 +174,45 @@
 	Preprocessing is a crucial step of any data analysis task. Much like any other analysis, the quality of the outputs of the system is directly dependent on the quality and accuracy of the inputs. In addition to this, deeper knowledge of the system is also useful in mapping input data values into system values.\\
 	
 	\noindent
-	For this system, the following is known about the nature of the data.
+	For this system, the following is known about the nature of the data:
 	
 	\begin{itemize}
 		\item \textbf{Values - } The values recorded in the data can generally be represented in scientific notation with up to 5 decimal places. 
+		\item \textbf{Data Nature - } According to the data sets provided information\cite{Lobov2018}, the data recorded are raw EMG values measured by the Myo armband. As such, special treatment of these values is required to  generate reasonable predictions.
+		\item \textbf{Data Bias - } As 36 subjects were used to conduct this experiment and the overall goal of this system is to generalise a system for classification, special consideration was required to obtain an accurate representation of the whole data set.
 	\end{itemize}
+
+	With these goals in mind, a system was designed to both format and clean data as well as prepare it for an MLP system. To design the system the most efficiently and allowing the ability for further experimentation, the system was to be designed in two steps. The first step was the formatting and cleaning of the data files into a format that could be directly imported into a Relational Database Management System (RDBMS). The second section was then the direct mapping of values into a format conducive to making classifications by the MLP system. 
+	
+	\subsection{Data Format Tool}
+	The first section of the overall preprocessing system was to develop a system to interface between raw data values and the RDBMS system storing all the training data for this project. For the sake of reproducibility, this section was designed to interface directly with the EMG Data for Gestures Data Set. Although a reasonably trivial process, it was important to structure the output data in such a way that all systems are able to interpret. The following flow chart describes the functionality of this section.	\\
+	\begin{figure}[H]\label{fig:data_format}
+		\centering
+		\includegraphics[width=15cm]{Figures/format_system}
+		\caption{Data Flow of the Formatting System}
+	\end{figure}
+
+	Table \ref{tbl:histo} show the distribution of values across each channel. This table was created using the popular data-mining tool WEKA. Due to the size of the input values and the implementation of the WEKA interface, little data insights are directly available. However, the distribution of values for the raw data indicate that
+
+	\begin{table}[H]
+		\centering		
+		\caption{Histogram of values across the EMG Data for Gestures Data Set}
+		\label{tbl:histo}
+		\begin{tabular}{cc}
+			\toprule
+			Channel & Histogram\\
+			\midrule
+			1 & \includegraphics[height=2.5cm, width=12cm]{Figures/Stats/channel1}\\
+			2 & \includegraphics[height=2.5cm, width=12cm]{Figures/Stats/channel2}\\
+			3 & \includegraphics[height=2.5cm, width=12cm]{Figures/Stats/channel3}\\
+			4 & \includegraphics[height=2.5cm, width=12cm]{Figures/Stats/channel4}\\
+			5 & \includegraphics[height=2.5cm, width=12cm]{Figures/Stats/channel5}\\
+			6 & \includegraphics[height=2.5cm, width=12cm]{Figures/Stats/channel6}\\
+			7 & \includegraphics[height=2.5cm, width=12cm]{Figures/Stats/channel7}\\
+			8 & \includegraphics[height=2.5cm, width=12cm]{Figures/Stats/channel8}\\
+			\bottomrule
+		\end{tabular}
+	\end{table}
 	
 	\section{Artificial Neural Networks}
 	
