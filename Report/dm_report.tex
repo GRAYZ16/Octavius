@@ -36,6 +36,9 @@
 
 \usepackage{times}
 
+\usepackage{caption} 
+\captionsetup[table]{skip=10pt}
+
 \fontfamily{ptm}\selectfont
 
 \lstset{
@@ -61,7 +64,7 @@
 			\vspace*{1cm}
 			
 			\Huge
-			\textbf{Data Mining Project}
+			\textbf{Classifying Hand Gestures from EMG Data}
 			
 			\vspace{0.5cm}
 			\LARGE
@@ -76,7 +79,7 @@
 					
 			\vspace{0.8cm}
 			
-			%\includegraphics[width=0.4\textwidth]{university}
+			\includegraphics[width=0.4\textwidth]{Figures/jculogo}
 			
 			\Large
 			College of Business, Law and Governance\\
@@ -95,6 +98,87 @@
 	\pagenumbering{arabic}
 	
 	\section{Introduction}
+	Since the turn of the 20th century, a lot of focus has been placed on the incorporation and integration of technology in medical fields. This relationship between medicine and technology has spawned a multitude of life-saving devices such as the Automated External Defibrillator and non-invasive diagnostic tools such as Magnetic Resonance Imaging and Computed Tomography.\\
+	
+	\noindent	
+	With the widespread increase of data mining and analysis in recent years as well as vast improvements in computing and storage power available today, a logical question for the data science community is finding the ways in which this area has the potential of improving the medical industry. In addition to this, in what way can the Internet of Things enable this kind of technology? A field which has attempted to improve the quality of life for it's patients since the beginning is the field of prosthetics.\\
+	
+	\noindent
+	
+	
+	\section{Artificial Neural Networks}
+	The field of classification has been plagued in recent years by the popularity of the Artificial Neural Network (ANN). Constantly evolving, ANN's are machine learning systems that aim to simulate the functionality of biological networks such as the human brain. As they have a constant defined structure, they excel when compared to some other methods as they have no bias from the programmer i.e. they are defined generally, with the data forcing biases in the output of the system.\\
+	
+	
+	\noindent
+	 
+	
+	
+	
+	\section{EMG Data for Gestures Data Set}
+	The EMG Data for Gestures Data Set (Available from: \url{https://archive.ics.uci.edu/ml/datasets/EMG+data+for+gestures}) was a data set created for determining latent factors in the performance of sEMG interfaces \cite{Lobov2018}. The overall achievement of this paper was identifying some potential medical influences on the use of EMG interfaces to measure gesture information.\\
+	
+	\noindent
+	This particular dataset was obtained through the use of the Myo Thalmic bracelet (See Figure \ref{fig:myo}). The EMG channel recordings were obtained through a Bluetooth interface to a computer. A total of eight channels are recorded with each of the sensors equally spaced around the forearm of the subjects recorded.\\
+	
+	\begin{table}[H]
+		\caption{Attributes of the Raw Data Set}
+		\centering
+		\begin{tabular}{l|l}
+			Attribute   & Description             \\\hline
+			Time        & Time Step of  Recording (Numeric)\\
+			Channel 1-8 & Raw EMG Measurement (Double Precision Float)     \\
+			Class       & Gesture Performed (Numeric 0-7)      \\\hline\hline
+		\end{tabular}
+	\end{table}
+
+\begin{table}[H]
+	\caption{Descriptions of Attribute Class}
+	\centering
+	\begin{tabular}{l|l}
+		Class & Description             \\\hline
+		0     & Unassigned              \\
+		1     & Hand at rest            \\
+		2     & Hand clenched in a fist \\
+		3     & Wrist Flexion           \\
+		4     & Wrist Extension         \\
+		5     & Radial Deviations       \\
+		6     & Ulnar Deviations        \\
+		7     & Extended Palm           \\\hline\hline
+	\end{tabular}
+\end{table}
+	
+	\noindent
+	A total of 36 subjects were used for this experiment. Each subject performed a series of static hand gestures (a total of 7 unique gestures) with a 3 second gap between the recording of each gesture. The series were also repeated twice for each subject.\\
+	
+	\noindent
+	The values recorded by each channel are represented in scientific format corresponding to a double precision floating point number. The magnitude corresponds to the potential measured by the device at the skin level but units were withheld from the data. Further information about the Myo armband revealed that raw EMG data should be transferred as uint8 values corresponding to the amount of "activation" of the muscle but this is not reflected in the data. Based on preliminary analysis, the data should be sufficient as the final system should adapt to incoming signals without the need of specific input data (As long as the format is known). \\
+	
+	\noindent
+	An important thing to note for this data set is that due to the nature of the data (different subjects), the general classification task will prove more difficult as there are physiological aspects that affect the magnitude of the readings. As explored in \cite{Lobov2018}, people who have greater muscle development in their forearms generally show higher magnitudes on the EMG readings and people with higher body fat content generally have smaller magnitudes.
+	
+	\begin{figure}[H]\label{fig:myo}
+		\centering
+		\includegraphics[width=10cm]{Figures/myo_armband}
+		\caption{Thalmic Labs Myo Bracelet}
+	\end{figure}
+
+	\noindent
+	Due to the discontinuation of the Myo armband in 2018, this dataset is unlikely to be able to be replicated or in future. However, the design of the final analysis system should be independent of the recording device used (as preprocessing should solve this problem). As is the design of many systems in use today, modularity is key for these devices to remain cost effective for the end users. 
+
+	
+	
+	\section{Preprocessing}
+	Preprocessing is a crucial step of any data analysis task. Much like any other analysis, the quality of the outputs of the system is directly dependent on the quality and accuracy of the inputs. In addition to this, deeper knowledge of the system is also useful in mapping input data values into system values.\\
+	
+	\noindent
+	For this system, the following is known about the nature of the data.
+	
+	\begin{itemize}
+		\item \textbf{Values - } The values recorded in the data can generally be represented in scientific notation with up to 5 decimal places. 
+	\end{itemize}
+	
+	\section{Artificial Neural Networks}
 	
 	\section{Conclusion}
 	
@@ -102,7 +186,7 @@
 	\nocite{*}	
 	\addcontentsline{toc}{section}{References}
 	\bibliographystyle{IEEEtran}
-	%\bibliography{References}{}
+	\bibliography{References}{}
 	
 	\newpage
 	\begin{appendices}

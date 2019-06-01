@@ -1,5 +1,9 @@
 \contentsline {section}{\numberline {1}Introduction}{1}{section.1}
-\contentsline {section}{\numberline {2}Conclusion}{1}{section.2}
-\contentsline {section}{References}{2}{section.2}
-\contentsline {section}{Appendices}{2}{section*.4}
-\contentsline {section}{\numberline {A}Examples}{2}{Appendix.1.A}
+\contentsline {section}{\numberline {2}Artificial Neural Networks}{1}{section.2}
+\contentsline {section}{\numberline {3}EMG Data for Gestures Data Set}{1}{section.3}
+\contentsline {section}{\numberline {4}Preprocessing}{3}{section.4}
+\contentsline {section}{\numberline {5}Artificial Neural Networks}{3}{section.5}
+\contentsline {section}{\numberline {6}Conclusion}{3}{section.6}
+\contentsline {section}{References}{4}{section.6}
+\contentsline {section}{Appendices}{5}{section*.8}
+\contentsline {section}{\numberline {A}Examples}{5}{Appendix.1.A}

@@ -1,0 +1,11 @@
+% Encoding: UTF-8
+
+@Misc{Dua:2019,
+  author      = {Dua, Dheeru and Graff, Casey},
+  title       = {{UCI} Machine Learning Repository},
+  year        = {2017},
+  institution = {University of California, Irvine, School of Information and Computer Sciences},
+  url         = {http://archive.ics.uci.edu/ml},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
