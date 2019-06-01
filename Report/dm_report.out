@@ -1,10 +1,14 @@
 \BOOKMARK [1][-]{section.1}{Introduction}{}% 1
 \BOOKMARK [1][-]{section.2}{Artificial Neural Networks}{}% 2
-\BOOKMARK [1][-]{section.3}{EMG Data for Gestures Data Set}{}% 3
-\BOOKMARK [1][-]{section.4}{Preprocessing}{}% 4
-\BOOKMARK [2][-]{subsection.4.1}{Data Format Tool}{section.4}% 5
-\BOOKMARK [1][-]{section.5}{Artificial Neural Networks}{}% 6
-\BOOKMARK [1][-]{section.6}{Conclusion}{}% 7
-\BOOKMARK [1][-]{section.6}{References}{}% 8
-\BOOKMARK [1][-]{section*.10}{Appendices}{}% 9
-\BOOKMARK [1][-]{Appendix.1.A}{Examples}{}% 10
+\BOOKMARK [2][-]{subsection.2.1}{Multi-layer Perceptron}{section.2}% 3
+\BOOKMARK [2][-]{subsection.2.2}{MLP for Classification}{section.2}% 4
+\BOOKMARK [1][-]{section.3}{EMG Data for Gestures Data Set}{}% 5
+\BOOKMARK [1][-]{section.4}{Preprocessing}{}% 6
+\BOOKMARK [2][-]{subsection.4.1}{Data Format Tool}{section.4}% 7
+\BOOKMARK [2][-]{subsection.4.2}{Data Storage}{section.4}% 8
+\BOOKMARK [2][-]{subsection.4.3}{Data Processing}{section.4}% 9
+\BOOKMARK [1][-]{section.5}{Artificial Neural Networks}{}% 10
+\BOOKMARK [1][-]{section.6}{Conclusion}{}% 11
+\BOOKMARK [1][-]{section.6}{References}{}% 12
+\BOOKMARK [1][-]{section*.13}{Appendices}{}% 13
+\BOOKMARK [1][-]{Appendix.1.A}{Data Format Module}{}% 14

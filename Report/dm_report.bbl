@@ -21,15 +21,52 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
+\bibitem{Bonaccorso2017}
+G.~Bonaccorso, \emph{Machine Learning Algorithms: A reference guide to popular
+  algorithms for data science and machine learning}.\hskip 1em plus 0.5em minus
+  0.4em\relax Packt Publishing, 2017.
+
 \bibitem{Lobov2018}
 S.~Lobov, N.~Krilova, I.~Kastalskiy, V.~Kazantsev, and V.~Makarov, ``Latent
   factors limiting the performance of {sEMG}-interfaces,'' \emph{Sensors},
   vol.~18, no.~4, p. 1122, apr 2018.
+
+\bibitem{myo_data}
+\BIBentryALTinterwordspacing
+Thalmic. (2019, Jun.) How do i access the raw emg data from the myo armband?
+  Online. [Online]. Available:
+  \url{https://support.getmyo.com/hc/en-us/articles/202536726}
+\BIBentrySTDinterwordspacing
 
 \bibitem{Dua:2019}
 \BIBentryALTinterwordspacing
 D.~Dua and C.~Graff, ``{UCI} machine learning repository,'' 2017. [Online].
   Available: \url{http://archive.ics.uci.edu/ml}
 \BIBentrySTDinterwordspacing
+
+\bibitem{Sharma2012}
+V.~Sharma, S.~Rai, and A.~Dev, ``A comprehensive study of artificial neural
+  networks,'' \emph{International Journal of Advanced research in computer
+  science and software engineering}, vol.~2, no.~10, 2012.
+
+\bibitem{Bonnin2017}
+R.~Bonnin, \emph{Machine Learning for Developers: Uplift your regular
+  applications with the power of statistics, analytics, and machine
+  learning}.\hskip 1em plus 0.5em minus 0.4em\relax Packt Publishing - ebooks
+  Account, 2017.
+
+\bibitem{mlm}
+\BIBentryALTinterwordspacing
+J.~Brownlee. (2018, Sep.) Machine learning algorithms in python. Machine
+  Learning Mastery. [Online]. Available:
+  \url{https://machinelearningmastery.com/}
+\BIBentrySTDinterwordspacing
+
+\bibitem{chollet2015keras}
+F.~Chollet \emph{et~al.}, ``Keras,'' \url{https://keras.io}, 2015.
+
+\bibitem{emg_analysis}
+W.~Rose, ``Electromyogram analysis,'' \emph{Mathematics and Signal Processing
+  for Biomechanics}, 2014.
 
 \end{thebibliography}
