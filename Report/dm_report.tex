@@ -106,7 +106,7 @@
 	With the widespread increase of data mining and analysis in recent years as well as vast improvements in computing and storage power available today, a logical question for the data science community is finding the ways in which this area has the potential of improving the medical industry. In addition to this, in what way can the Internet of Things enable this kind of technology? A field which has attempted to improve the quality of life for it's patients since the beginning is the field of prosthetics.\\
 	
 	\noindent
-	
+	Prosthetics offer a plethora of opportunities for data to be examined and mined. This potential use has sparked a thoughts and resulted in many studies and articles. This study will be centralised around the classification of raw Electromyography data captured from a EMG Band which is available for consumers as a tool to perform actions based on certain gestures performed by the wrist and hand. For further understanding a myograph is any device used to measure the force produced by a muscle when under contraction. When performing an action, muscles are contracted with different speeds and intensities. An EMG can read these signals and output them as a voltage. These voltages can be studied to realise how muscles are contracted and what actions are performed. This study will attempt to classify EMG data into seven classification categories.
 	
 	\section{Artificial Neural Networks}
 	The field of classification has been plagued in recent years by the popularity of the Artificial Neural Network (ANN). Constantly evolving, ANN's are machine learning systems that aim to simulate the functionality of biological networks such as the human brain. As they have a constant defined structure, they excel when compared to some other methods as they have no bias from the programmer i.e. they are defined generally, with the data forcing biases in the output of the system.\\
@@ -132,6 +132,10 @@
 	\end{figure}
 	
 	\subsection{MLP's and Classification}\label{sec:mlp_class}
+	As the field of MLP's and ANN's in general are vast in complexities and can differ greatly in their implementations, this section aims to define the general structure of the MLP system used in this paper with some generalisations in terms of hyper-parameter settings as this is the core part of manipulating our system.\\
+	
+	\noindent
+	
 	
 	
 	\section{EMG Data for Gestures Data Set}
@@ -287,7 +291,13 @@
 	
 	\section{Performance}
 	
-	One caveat realised towards the end of the data preprocessing was the use of MinMax scaling at the batch level potentially skewing results obtained. A more appropriate solution is the use of MinMax at the subject level such that the maximum of a record is relative to the maximum value recorded by that subject. With this, the generalisation process may have been considerably more accurate. 
+	One caveat realised towards the end of the data preprocessing was the use of MinMax scaling at the batch level potentially skewing results obtained. A more appropriate solution is the use of MinMax at the subject level such that the maximum of a record is relative to the maximum value recorded by that subject. With this, the generalisation process may have been considerably more accurate.\\
+	
+	\noindent
+	Another realisation was the way in which the model was trained and data was split. \\
+	
+	\noindent
+	he data found for this study was conducted in Russia with no data on the ages and types of people used for gathering results. Although the algorithm would be aiming for a generalisation. It is inevitable that each person would develop and control their muscles differently. This would differ from male to female, a person with injuries or nerve damage and different nerve endings and their ability to flex their muscles to perform the gesture classes classified.
 		
 	
 	\section{Conclusion}
