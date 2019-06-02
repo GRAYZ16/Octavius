@@ -106,7 +106,7 @@
 	With the widespread increase of data mining and analysis in recent years as well as vast improvements in computing and storage power available today, a logical question for the data science community is finding the ways in which this area has the potential of improving the medical industry. In addition to this, in what way can the Internet of Things enable this kind of technology? A field which has attempted to improve the quality of life for it's patients since the beginning is the field of prosthetics.\\
 	
 	\noindent
-	Prosthetics offer a plethora of opportunities for data to be examined and mined. This potential use has sparked a thoughts and resulted in many studies and articles. This study will be centralised around the classification of raw Electromyography data captured from a EMG Band which is available for consumers as a tool to perform actions based on certain gestures performed by the wrist and hand. For further understanding a myograph is any device used to measure the force produced by a muscle when under contraction. When performing an action, muscles are contracted with different speeds and intensities. An EMG can read these signals and output them as a voltage. These voltages can be studied to realise how muscles are contracted and what actions are performed. This study will attempt to classify EMG data into seven classification categories.
+	Prosthetics offer a plethora of opportunities for data to be examined and mined. This potential use has sparked a thoughts and resulted in many studies and articles. This study will be centralised around the classification of raw Electromyography data captured from a EMG Band which is commercially available for at home gesture analysis tool. A myograph is any device used to measure the force produced by a muscle when under contraction. When performing an action, muscles are contracted with different speeds and intensities. An EMG can measure the activation of skeletal muscles by the electrical potential seen at the measurement probe. These voltages can be studied to measure muscle contraction and hence gestures that the subject is performing. This study will attempt to classify EMG data into seven classification categories based on distinct hand gestures recorded by an EMG device.
 	
 	\section{Artificial Neural Networks}
 	The field of classification has been plagued in recent years by the popularity of the Artificial Neural Network (ANN). Constantly evolving, ANN's are machine learning systems that aim to simulate the functionality of biological networks such as the human brain. As they have a constant defined structure, they excel when compared to some other methods as they have no bias from the programmer i.e. they are defined generally, with the data forcing biases in the output of the system.\\
@@ -148,7 +148,10 @@
 	\noindent
 	When considering activation functions for neurons, you must also consider the output of your neural network system. Depending on the problem you are attempting to solve, this may come in many different forms. For classification, the output of the network should be the probability of the input matching one of the classification classes. The most appropriate activation function to generate this is the softmax. Softmax as a function that accepts K real input arguments and outputs a probability distribution consisting of K probabilities. This essentially enables the output of the neural network to convert the non-normalised output to a probability distribution in which the sum of all class probabilities is 1. The softmax function is given by:\\
 	
-	$$\sigma(z)_i= \frac{e^{z_i}}{\sum_{j=1}^{K}e^{z_j}}$$ where $z$ is the input vector
+	$$\sigma(z)_i= \frac{e^{z_i}}{\sum_{j=1}^{K}e^{z_j}}$$ where $z$ is the input vector\\
+	
+	\noindent
+	Now that we have a neural network consisting of an arbitary amount of hidden layers with ReLU activation and softmax output, an appropriate loss function needs to be chosen. 
 	
 	
 	\section{EMG Data for Gestures Data Set}
