@@ -302,21 +302,117 @@
 	\noindent
 	The next step is to prepare the values to be used with the chosen MLP system. In a neural network system, there are multiple variables that come into play when preprocessing data. With the increase in computation time, it is important that only necessary functions are applied for real-time systems, as well as designing input functions to fully utilise the activation functions of MLP neurons and minimise errors due to floating point quantisation error. For this aspect, MinMax Scaling was used to ensure that values were within the gradient points of the activation function (ReLU) as well as achieving a zero mean and unit variance.
 	
-	\section{Artificial Neural Networks}
+	\section{Result and Discussion}
+	The aim of the study was to train the algorithm to categorise eight channels of raw EMG data into one of seven classes. Looking at the accuracy of four models tested we can observe high levels of loss /ref{fig/models}.
+	
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=15cm]{Figures/results}
+		\caption{Model Training Data - Model Loss per Epoch}
+		\label{fig:models}
+	\end{figure}
+	
+	\noindent
+	Upon further investigation it can be seen that the lowest loss values can be generated after minimal epochs which shows how generalisation of data is not a viable solution for classifying EMG data. This method of batching the data was used for all four models.\\
+	
+	\noindent
+	For extended research into the models, metrics were generated in the form of classification reports.\\
+	
+	\noindent
+	Precision is a measure of how exact the classifier is with respect to each class. A low precision indicates a high number of false positives. On the other hand recall is a measure of sensitivity and shows how often a classifier regularly misclassified records of each class. F1-Score is defined as the balance between precision and recall. This method can be used to determine which model is superior.Support can be seen as the number of instances each class has a record in the trained model.The tables below are generated using a random selection data. From the SQL database.
+	
+	\begin{table}[H]
+		\centering
+		\caption{Classification Metrics for the Baseline Prediction}
+		\begin{tabular}{l|llll}
+			Class     & Precision & Recall & F1-Score & Support \\\hline
+			1         & 0.67      & 0.99   & 0.8      & 146     \\
+			2         & 0.68      & 0.57   & 0.62     & 160     \\
+			3         & 0.62      & 0.61   & 0.61     & 175     \\
+			4         & 0.67      & 0.63   & 0.65     & 191     \\
+			5         & 0.58      & 0.54   & 0.56     & 166     \\
+			6         & 0.57      & 0.54   & 0.56     & 179     \\
+			7         & 0         & 0      & 0        & 8       \\
+			Avg/Total & 0.63      & 0.63   & 0.62     & 1025   \\\hline\hline
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\caption{Classification Metrics for the Dropout Model Prediction}
+		\begin{tabular}{l|llll}
+			Class     & Precision & Recall & F1-Score & Support \\\hline
+			1         & 0.92      & 0.84   & 0.88     & 146     \\
+			2         & 0.35      & 0.76   & 0.48     & 160     \\
+			3         & 0.53      & 0.63   & 0.58     & 175     \\
+			4         & 0.64      & 0.52   & 0.58     & 191     \\
+			5         & 0.6       & 0.29   & 0.39     & 166     \\
+			6         & 0.63      & 0.37   & 0.46     & 179     \\
+			7         & 0         & 0      & 0        & 8       \\
+			Avg/Total & 0.6       & 0.56   & 0.55     & 1025   \\\hline\hline
+		\end{tabular}
+	\end{table}
+	
+	\begin{table}[H]
+		\centering
+		\caption{Classification Metrics for the Extra Neurons Prediction}
+		\begin{tabular}{l|llll}
+			Class     & Precision & Recall & F1-Score & Support \\\hline
+			1         & 0.83      & 0.95   & 0.88     & 146     \\
+			2         & 0.65      & 0.6    & 0.62     & 160     \\
+			3         & 0.71      & 0.49   & 0.58     & 175     \\
+			4         & 0.61      & 0.67   & 0.64     & 191     \\
+			5         & 0.46      & 0.63   & 0.53     & 166     \\
+			6         & 0.59      & 0.51   & 0.55     & 179     \\
+			7         & 0         & 0      & 0        & 8       \\
+			Avg/Total & 0.63      & 0.63   & 0.62     & 1025   \\\hline\hline
+		\end{tabular}
+	\end{table}
 	
 	
-	\section{Performance}
+	\begin{table}[H]
+		\centering
+		\caption{Classification Metrics for the Extra Layers Prediction}
+		\begin{tabular}{l|llll}
+			Class     & Precision & Recall & F1-Score & Support \\\hline
+			1         & 0.95      & 0.14   & 0.24     & 146     \\
+			2         & 0.39      & 0.73   & 0.51     & 160     \\
+			3         & 0.71      & 0.32   & 0.44     & 175     \\
+			4         & 0.53      & 0.65   & 0.58     & 191     \\
+			5         & 0.32      & 0.61   & 0.42     & 166     \\
+			6         & 0.64      & 0.25   & 0.35     & 179     \\
+			7         & 0         & 0      & 0        & 8       \\
+			Avg/Total & 0.58      & 0.45   & 0.43     & 1025   \\\hline\hline
+		\end{tabular}
+	\end{table}
+	
+	
+
+	
+	
+	
+	\subsection{Artificial Neural Networks}
+	The four models tested displayed four different methods tried to improve output accuracy. The baseline model consisted of two layers of 16 nodes and this proved to produce the best results with an exponential like approach to our minimum loss value. This can be compared to both models where the neurons were doubled and layers were doubled in the neuron and layers curves respectively. The drop out model tested showed much higher values of loss, this could be due to the number of epochs tested as a result of the early stop function implemented.\\
+	
+	\noindent
+	On further analysis of the curves, observation shows how the validation curves for each model rubber band around its minimum loss and this could be a multitude of reasons, however this is usually correlated with over training. From another view this could be related to how the data was randomised. With different peoples data being fed into the model this could result in a learning curve for each epoch.
+	
+	\subsection{Performance}
 	
 	One caveat realised towards the end of the data preprocessing was the use of MinMax scaling at the batch level potentially skewing results obtained. A more appropriate solution is the use of MinMax at the subject level such that the maximum of a record is relative to the maximum value recorded by that subject. With this, the generalisation process may have been considerably more accurate.\\
 	
 	\noindent
-	Another realisation was the way in which the model was trained and data was split. \\
+	Another realisation was the way in which the model was trained and data was split. With persons data being split via class and randomised this would prove for the model training to be very generalised skewing result back and fourth amongst an average accuracy.\\
 	
 	\noindent
-	he data found for this study was conducted in Russia with no data on the ages and types of people used for gathering results. Although the algorithm would be aiming for a generalisation. It is inevitable that each person would develop and control their muscles differently. This would differ from male to female, a person with injuries or nerve damage and different nerve endings and their ability to flex their muscles to perform the gesture classes classified.
+	The data found for this study was conducted in Russia with no data on the ages and types of people used for gathering results. Although the algorithm would be aiming for a generalisation. It is inevitable that each person would develop and control their muscles differently. This would differ from male to female, a person with injuries or nerve damage or different nerve endings and their ability to flex their muscles to perform the gesture classes classified.
 		
 	
 	\section{Conclusion}
+	In summary the realisations of this study can show many different perspectives; the most notable is data accuracy. Whether the data is inaccurate because of the use of surface EMGs or human error in placement, it is safe to say that there are errors in the processing before being released. This would have to be examined further by the authors or in future works. All in all the results correlated well with initial hypothesis of the data being too generalised. This provided many insights in the world of data mining and analysis.
+	
+	\section{Future Work}
+	Looking further into improving the performance of the model designed there a few methods devised for future works. With data not in being able to be changed the recommendations are primarily focused on algorithm selection, tuning and use of ensembles.
 	
 	\newpage
 	\nocite{*}	

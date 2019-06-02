@@ -1,4 +1,8 @@
-\contentsline {table}{\numberline {1}{\ignorespaces Attributes of the Raw Data Set\relax }}{5}{table.caption.7}
-\contentsline {table}{\numberline {2}{\ignorespaces Descriptions of Attribute Class\relax }}{5}{table.caption.8}
-\contentsline {table}{\numberline {3}{\ignorespaces Histogram of values across the EMG Data for Gestures Data Set\relax }}{8}{table.caption.11}
-\contentsline {table}{\numberline {4}{\ignorespaces Gestures Table Structure in SQL Server\relax }}{9}{table.caption.12}
+\contentsline {table}{\numberline {1}{\ignorespaces Attributes of the Raw Data Set\relax }}{5}{table.caption.7}% 
+\contentsline {table}{\numberline {2}{\ignorespaces Descriptions of Attribute Class\relax }}{5}{table.caption.8}% 
+\contentsline {table}{\numberline {3}{\ignorespaces Histogram of values across the EMG Data for Gestures Data Set\relax }}{8}{table.caption.11}% 
+\contentsline {table}{\numberline {4}{\ignorespaces Gestures Table Structure in SQL Server\relax }}{9}{table.caption.12}% 
+\contentsline {table}{\numberline {5}{\ignorespaces Classification Metrics for the Baseline Prediction\relax }}{11}{table.caption.14}% 
+\contentsline {table}{\numberline {6}{\ignorespaces Classification Metrics for the Dropout Model Prediction\relax }}{11}{table.caption.15}% 
+\contentsline {table}{\numberline {7}{\ignorespaces Classification Metrics for the Extra Neurons Prediction\relax }}{11}{table.caption.16}% 
+\contentsline {table}{\numberline {8}{\ignorespaces Classification Metrics for the Extra Layers Prediction\relax }}{12}{table.caption.17}% 
