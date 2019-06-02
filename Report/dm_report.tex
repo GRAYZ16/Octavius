@@ -66,7 +66,7 @@
 			\vspace*{1cm}
 			
 			\Huge
-			\textbf{Classifying Hand Gestures from EMG Data}
+			\textbf{Classifying Hand Gestures from EMG Data with Multi-layer Perceptron Networks}
 			
 			\vspace{0.5cm}
 			\LARGE
@@ -87,7 +87,7 @@
 			College of Business, Law and Governance\\
 			James Cook University\\
 			Australia\\
-			25/05/2019
+			02/06/2019
 			
 		\end{center}
 	\end{titlepage}
@@ -135,7 +135,20 @@
 	As the field of MLP's and ANN's in general are vast in complexities and can differ greatly in their implementations, this section aims to define the general structure of the MLP system used in this paper with some generalisations in terms of hyper-parameter settings as this is the core part of manipulating our system.\\
 	
 	\noindent
+	The first major consideration required when designing an MLP system is the choice of activation function $f_a$ (See Figure \ref{fig:mlp}). For a long time, the sigmoid or hyperbolic tangent function reigned supreme in this area. However, in recent years, the Rectified Linear Unit (ReLU) has proven to be a better choice in many applications. As the name implies, this function is a rectified linear activation function meaning values below 0 are 0 and the function is linear when values are greater than 0. This can be seen in Figure \ref{fig:relu}. As back-propagation in neural networks relies on the derivative of the activation function, the ReLU gradient function is a step function about the origin. This normalises weight updates of the loss function and avoids the vanishing gradient problem present with sigmoid and hyperbolic tangent functions.\\
+		
+	\begin{figure}[H]
+		\centering
+		\includegraphics[width=10cm]{Figures/relu}
+		\caption{ReLU Activation Curve}
+		\label{fig:relu}
+	\end{figure}
+
+
+	\noindent
+	When considering activation functions for neurons, you must also consider the output of your neural network system. Depending on the problem you are attempting to solve, this may come in many different forms. For classification, the output of the network should be the probability of the input matching one of the classification classes. The most appropriate activation function to generate this is the softmax. Softmax as a function that accepts K real input arguments and outputs a probability distribution consisting of K probabilities. This essentially enables the output of the neural network to convert the non-normalised output to a probability distribution in which the sum of all class probabilities is 1. The softmax function is given by:\\
 	
+	$$\sigma(z)_i= \frac{e^{z_i}}{\sum_{j=1}^{K}e^{z_j}}$$ where $z$ is the input vector
 	
 	
 	\section{EMG Data for Gestures Data Set}
