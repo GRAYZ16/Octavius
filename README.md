@@ -1,2 +1,13 @@
-# Data Mining Assignment
-Assignment Repository for the CP3403 - Data Mining Project
+# Octavius EMG Data Classifier
+This project attempted to generalise a Neural Network for classifying EMG data from the Thalmic Myo bracelet as an interface to mechanical prosthetic devices. 
+
+
+## Contributors
+- Joshua Gray
+- Harmon Singh
+
+## Implementation
+
+## Results
+
+
