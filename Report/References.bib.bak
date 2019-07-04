@@ -1,0 +1,82 @@
+% Encoding: UTF-8
+
+@Misc{Dua:2019,
+  author      = {Dua, Dheeru and Graff, Casey},
+  title       = {{UCI} Machine Learning Repository},
+  year        = {2017},
+  institution = {University of California, Irvine, School of Information and Computer Sciences},
+  url         = {http://archive.ics.uci.edu/ml},
+}
+
+@Article{Lobov2018,
+  author    = {Sergey Lobov and Nadia Krilova and Innokentiy Kastalskiy and Victor Kazantsev and Valeri Makarov},
+  title     = {Latent Factors Limiting the Performance of {sEMG}-Interfaces},
+  journal   = {Sensors},
+  year      = {2018},
+  volume    = {18},
+  number    = {4},
+  pages     = {1122},
+  month     = {apr},
+  doi       = {10.3390/s18041122},
+  publisher = {{MDPI} {AG}},
+}
+
+@Electronic{myo_data,
+  author       = {Thalmic},
+  month        = jun,
+  year         = {2019},
+  title        = {How do I access the raw EMG data from the Myo armband?},
+  howpublished = {Online},
+  url          = {https://support.getmyo.com/hc/en-us/articles/202536726},
+}
+
+@Article{Sharma2012,
+  author        = {Sharma, Vidushi and Rai, Sachin and Dev, Anurag},
+  title         = {A comprehensive study of artificial neural networks},
+  journal       = {International Journal of Advanced research in computer science and software engineering},
+  year          = {2012},
+  volume        = {2},
+  number        = {10},
+  __markedentry = {[Joshua:]},
+}
+
+@Book{Bonaccorso2017,
+  title     = {Machine Learning Algorithms: A reference guide to popular algorithms for data science and machine learning},
+  publisher = {Packt Publishing},
+  year      = {2017},
+  author    = {Giuseppe Bonaccorso},
+  isbn      = {978-1-78588-962-2},
+}
+
+@Book{Bonnin2017,
+  title     = {Machine Learning for Developers: Uplift your regular applications with the power of statistics, analytics, and machine learning},
+  publisher = {Packt Publishing - ebooks Account},
+  year      = {2017},
+  author    = {Rodolfo Bonnin},
+  isbn      = {978-1-78646-987-8},
+}
+
+@Electronic{mlm,
+  author       = {Jason Brownlee},
+  month        = sep,
+  year         = {2018},
+  title        = {Machine Learning Algorithms in Python},
+  organization = {Machine Learning Mastery},
+  url          = {https://machinelearningmastery.com/},
+}
+
+@Misc{chollet2015keras,
+  author       = {Chollet, Fran\c{c}ois and others},
+  title        = {Keras},
+  howpublished = {\url{https://keras.io}},
+  year         = {2015},
+}
+
+@Article{emg_analysis,
+  author  = {William Rose},
+  title   = {Electromyogram analysis},
+  journal = {Mathematics and Signal Processing for Biomechanics},
+  year    = {2014},
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
