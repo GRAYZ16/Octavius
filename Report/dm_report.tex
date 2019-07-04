@@ -34,6 +34,8 @@
 
 \usepackage{float}
 
+\usepackage{pdfpages}
+
 \usepackage{times}
 
 \usepackage{caption} 
@@ -75,7 +77,13 @@
 			\vspace{1.5cm}
 			
 			\textbf{Joshua Gray - 13177877}\\	
-			\textbf{Harmon Singh - }
+			\textbf{Harmon Singh - 13182411}\\
+			
+			
+			\vspace{0.8cm}
+			
+			Link to Dataset: \url{https://archive.ics.uci.edu/ml/datasets/EMG+data+for+gestures}\\
+			Link to Presentation: \url{https://youtu.be/_YLLmnAcJ3U}
 			
 			\vfill			
 					
@@ -98,7 +106,7 @@
 	\listoftables
 	\newpage
 	\pagenumbering{arabic}
-	
+		
 	\section{Introduction}
 	Since the turn of the 20th century, a lot of focus has been placed on the incorporation and integration of technology in medical fields. This relationship between medicine and technology has spawned a multitude of life-saving devices such as the Automated External Defibrillator and non-invasive diagnostic tools such as Magnetic Resonance Imaging and Computed Tomography.\\
 	
@@ -151,7 +159,7 @@
 	$$\sigma(z)_i= \frac{e^{z_i}}{\sum_{j=1}^{K}e^{z_j}}$$ where $z$ is the input vector\\
 	
 	\noindent
-	Now that we have a neural network consisting of an arbitary amount of hidden layers with ReLU activation and softmax output, an appropriate loss function needs to be chosen. 
+	Now that we have a neural network consisting of an arbitrary amount of hidden layers with ReLU activation and softmax output, an appropriate loss function needs to be chosen. For this purpose, the popular RMSProp algorithm was selected. Although never published, the RMSProp loss function designed by famous computer scientist Geoffrey Hinton, is a momentum-based loss function designed to handle some local minima issues present in previous loss functions such as stochastic gradient descent. The RMSProp function was utilised as the loss function for all the models presented in this paper. 
 	
 	
 	\section{EMG Data for Gestures Data Set}
@@ -303,7 +311,7 @@
 	The next step is to prepare the values to be used with the chosen MLP system. In a neural network system, there are multiple variables that come into play when preprocessing data. With the increase in computation time, it is important that only necessary functions are applied for real-time systems, as well as designing input functions to fully utilise the activation functions of MLP neurons and minimise errors due to floating point quantisation error. For this aspect, MinMax Scaling was used to ensure that values were within the gradient points of the activation function (ReLU) as well as achieving a zero mean and unit variance.
 	
 	\section{Result and Discussion}
-	The aim of the study was to train the algorithm to categorise eight channels of raw EMG data into one of seven classes. Looking at the accuracy of four models tested we can observe high levels of loss /ref{fig/models}.
+	The aim of the study was to train the algorithm to categorise eight channels of raw EMG data into one of seven classes. Looking at the accuracy of four models tested we can observe high levels of loss in Figure \ref{fig:models}.
 	
 	\begin{figure}[H]
 		\centering
@@ -313,10 +321,10 @@
 	\end{figure}
 	
 	\noindent
-	Upon further investigation it can be seen that the lowest loss values can be generated after minimal epochs which shows how generalisation of data is not a viable solution for classifying EMG data. This method of batching the data was used for all four models.\\
+	Upon further investigation it can be seen that the lowest loss values can be generated after minimal epochs which shows how generalisation of data is not a viable solution for classifying EMG data. This method of batching the data was used for all four models. A better solution in future would be to preprocess data per subject rather than as a bulk procedure.\\
 	
 	\noindent
-	For extended research into the models, metrics were generated in the form of classification reports.\\
+	For extended insights into the models, metrics were generated in the form of classification reports. These reports, generated for each of the main models, show some valuable metrics for classification tasks.\\
 	
 	\noindent
 	Precision is a measure of how exact the classifier is with respect to each class. A low precision indicates a high number of false positives. On the other hand recall is a measure of sensitivity and shows how often a classifier regularly misclassified records of each class. F1-Score is defined as the balance between precision and recall. This method can be used to determine which model is superior.Support can be seen as the number of instances each class has a record in the trained model.The tables below are generated using a random selection data. From the SQL database.
@@ -423,6 +431,6 @@
 	\newpage
 	\begin{appendices}
 		\section{Data Format Module}\label{adx:data_format}
-		
+		\includepdf[pages=-]{Preprocessing.pdf}
 	\end{appendices}	
 \end{document}
